@@ -2,12 +2,13 @@
     flex-basis: 80%;
     display: flex;
     flex-wrap: wrap;
-
-    padding: 20px 0;
+  
     margin: 0;
-}
-
-ul {
-	display: flex;
-	padding: 20px;
-}
+    padding: 20px 0;
+  }
+  
+  .pagination {
+    display: flex; 
+    justify-content: space-between;
+    padding: 40px 20px;
+  }

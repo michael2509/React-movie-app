@@ -3,20 +3,19 @@ import React, { Component } from "react";
 import "./Navigation.css";
 import Selection from "./selection/Selection";
 import Slider from "./slider/Slider";
+import Button from "./button/Button";
 
 class Navigation extends Component {
 
     componentDidMount() {
-        const genresURL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=fr-FR`;
-        
-        fetch(genresURL)
+        fetch(this.props.url)
             .then(response => response.json())
-            .then(data => this.props.setGenres( data.genres ))
-            .catch(error => console.log(error));
+            .then(data => this.props.setGenres(data.genres))
+            .catch(error => console.log(error))
     }
 
     render() {
-        const { genre, genres, onGenreChange, onChange, year, rating, runtime } = this.props;
+        const { genre, genres, onGenreChange, onChange, year, rating, runtime, onSearchButtonClick } = this.props;
 
         return (
             <section className="navigation">
@@ -29,6 +28,10 @@ class Navigation extends Component {
                 <Slider data={year} onChange={onChange} />
                 <Slider data={rating} onChange={onChange} />
                 <Slider data={runtime} onChange={onChange} />
+
+                <Button onClick={onSearchButtonClick}>
+                    Search
+                </Button>
             </section>
         )
     }
