@@ -10,7 +10,7 @@ class Movie extends Component {
 
     componentDidMount() {
         const { movieId } = this.props.match.params;
-        const movieUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=fr-FR`;
+        const movieUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=0e220568bac27a347c49f800f789f519&language=fr-FR`;
 
         fetch(movieUrl)
             .then(response => response.json())

@@ -8,8 +8,8 @@ class Main extends Component {
         movies: [],
         page: 1,
         total_pages: 1,
-        url: `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=fr-FR`,
-        moviesUrl: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
+        url: `https://api.themoviedb.org/3/genre/movie/list?api_key=0e220568bac27a347c49f800f789f519&language=fr-FR`,
+        moviesUrl: `https://api.themoviedb.org/3/discover/movie?api_key=0e220568bac27a347c49f800f789f519&language=fr-FR&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
         genre: "Action",
         genres: [],
         year: {
@@ -66,7 +66,7 @@ class Main extends Component {
         const genreId = selectedGenre.id;
 
         const moviesUrl = `https://api.themoviedb.org/3/discover/movie?` +
-        `api_key=${process.env.REACT_APP_TMDB_API_KEY}&` +
+        `api_key=0e220568bac27a347c49f800f789f519&` +
         `language=fr-FR&sort_by=popularity.desc&` +
         `with_genres=${genreId}&` +
         `primary_release_date.gte=${year.value.min}-01-01&` +
